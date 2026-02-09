@@ -36,6 +36,7 @@ from sglang.srt.configs import (
     JetVLMConfig,
     KimiLinearConfig,
     NemotronH_Nano_VL_V2_Config,
+    Lfm2Config,
     NemotronHConfig,
     Qwen3NextConfig,
 )
@@ -1614,7 +1615,7 @@ class ModelRunner:
     @property
     def mamba2_config(self):
         config = self.model_config.hf_config
-        if isinstance(config, FalconH1Config | NemotronHConfig):
+        if isinstance(config, FalconH1Config | NemotronHConfig | Lfm2Config):
             return config
         if isinstance(config, NemotronH_Nano_VL_V2_Config):
             return config.llm_config
