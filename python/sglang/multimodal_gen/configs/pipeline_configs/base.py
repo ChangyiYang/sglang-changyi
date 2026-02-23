@@ -600,9 +600,9 @@ class PipelineConfig:
             pipeline_config_cls = model_info.pipeline_config_cls
         vae_path = kwargs.get(prefix_with_dot + "vae_path") or kwargs.get("vae_path")
         if vae_path is None:
-            component_paths = kwargs.get(prefix_with_dot + "component_paths") or kwargs.get(
-                "component_paths"
-            )
+            component_paths = kwargs.get(
+                prefix_with_dot + "component_paths"
+            ) or kwargs.get("component_paths")
             if isinstance(component_paths, dict):
                 vae_path = component_paths.get("vae")
 
